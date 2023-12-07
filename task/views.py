@@ -7,7 +7,7 @@ def add_task(req) :
         task_form = TaskForm(req.POST)
         if task_form.is_valid() :
             task_form.save()
-            return redirect('add_task')
+            return redirect('show_task')
         
     task_form = TaskForm()
     return render(req, 'task/add_task.html', {'form' : task_form})
